@@ -1,0 +1,122 @@
+var a = 5
+var a int = 5
+var a := 5
+
+var list List = [each ** 2 for each in (1..10)] # generator
+var tuple := (4, 5, 6)
+var dict = [
+    "key": value, # last colon is optional
+]
+var set = Set(...)
+var stack = Stack(...)
+
+var b = { # anonymous scoop
+    var first = input("> ")
+    var second = input("> ")
+    return "${first} ${second}"
+}
+var b = with a as five {
+    ...
+}
+var b = using '5' as abyte, a as five {
+    ...
+}
+var b = using _ { # perfect anonymous scoop
+    ...
+}
+
+var c = @b # c points to the same object as b
+
+fun f(x) = 2x + 1 if x % 2 == 0 else 2x # ternary operator
+fun f(x) int = 2x + 1 if x % 2 == 0 else 2x
+
+c = f(3)
+
+
+if c == 3 {
+    ...
+} else if c > 3 {
+    ...
+} else ...
+
+
+while true do exec( input("> ") ) # assuming exec is a defined scoop or fun
+
+while a >= 0 and input("> ") == "y" { # (not xor or and) are for booleans only
+    ...
+}
+
+{ # a do while loop
+    ...
+} while a >= 0
+
+var name str 
+{
+    var ~name := input("> ") 
+    ...
+    if ~name.isalpha() do name = ~name # name stays undefined until if works
+} while name ?= undefined
+# ?= checks type equality
+
+lst =? immtbl # =? converts to appropriate type
+
+
+for var i in (0..2i..200) {
+    ...
+}
+
+
+when c
+is 9, 12, 15 {
+    ...
+}
+is 2, 4, 6 {
+    ...
+    fall
+}
+else {
+    ...
+}
+
+fun check(..values, checkFunction) = checkFunction(values..)
+
+var isEven bln = check(3, fun _(x) = x % 2 == 0)
+
+
+# return types are optional just like everywhere else
+scoop weirdJoin(..strings str) returns str using _ { # a perfect scoop
+    var out str
+    for string in strings do out = "${out}${string}"
+    return out
+}
+
+#{ Declaring scoops and funs within other scoop sand returning them
+   isn't allowed. }#
+
+scoop joiner(..strings) { # no typechecking
+    print("Joining ${strings} now...")
+
+    var withSpaces
+
+    for s in strings do withSpaces = withSpaces.concat(s, " ")
+    withSpaces = withSpaces.rtrim()
+
+    return withSpaces, weirdJoin(strings..)
+
+    #{ use strings.. to unpack arguments in call to weirdJoin instead of passing
+       them as a list }#
+}
+
+scoop emptyScoop returns str {
+    return "I do not need any arguments, so I don't need brackets() !"
+}
+
+
+print(
+"This is just
+a multiline raw string. You shall not
+be afraid of if!"
+)
+
+screech("This is an exception/error. Be cautious about it!")
+

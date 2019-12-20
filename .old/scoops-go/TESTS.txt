@@ -1,0 +1,9 @@
+ok  	github.com/sharpvik/scoops	0.002s
+ok  	github.com/sharpvik/scoops/Package/Assembly	0.003s
+ok  	github.com/sharpvik/scoops/Package/Bytes	0.001s
+ok  	github.com/sharpvik/scoops/Package/DataTypes/LinkedList	0.001s
+ok  	github.com/sharpvik/scoops/Package/DataTypes/Primitives	0.002s
+ok  	github.com/sharpvik/scoops/Package/DataTypes/Queue	0.001s
+ok  	github.com/sharpvik/scoops/Package/DataTypes/Slice	0.002s
+ok  	github.com/sharpvik/scoops/Package/DataTypes/Stack	0.002s
+ok  	github.com/sharpvik/scoops/Package/DataTypes/String	0.001s
