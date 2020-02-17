@@ -1,2 +1,10 @@
+In `doc/types/README.md`, list all data types and note which ones are considered
+'basic' and 'composite'. Composite data types are basically all collections +
+all user-defined data types -- they are supposed to begin with a Capital Letter.
+
 Record source code, assembly, and bytecode standards to provide grounds for
 coherent implementation.
+
+Finalize Scoops Source Code, Assembly, and Virtual Machine designs to be able to
+implement them and exhaust resources inside the `.old` folder. It has to be
+removed soon after.

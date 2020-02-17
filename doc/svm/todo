@@ -1,0 +1,14 @@
+Goals of Scoops Virtual Machine and Bytecode
+
+1. Execute code as fast as possible
+
+2. But keep track of data used for debugging (like scoop and variable names)
+
+3. Support raw or pre-compiled packages
+    - Thus, be able to work with namespaces (e.g. math.floor)
+    - Support bytecode that has packages pre-compiled and linked into it
+
+4. Allow for unit tests to be run with ease
+
+5. Provide simple interface between structs and functions written in Rust or Go
+   (depending on the Scoops implementation) from within Scoops Language

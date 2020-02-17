@@ -2,7 +2,7 @@ var a = 5
 var a int = 5
 var a := 5
 
-var list List = [each ** 2 for each in (1..10)] # generator
+var list List = [each ** 2 for each in 1..10] # generator
 var tuple := (4, 5, 6)
 var dict = [
     "key": value, # last colon is optional
@@ -13,12 +13,12 @@ var stack = Stack(...)
 var b = { # anonymous scoop
     var first = input("> ")
     var second = input("> ")
-    return "${first} ${second}"
+    return $"{first} {second}"
 }
 var b = with a as five {
     ...
 }
-var b = using '5' as abyte, a as five {
+var b = using a as five {
     ...
 }
 var b = using _ { # perfect anonymous scoop
@@ -37,7 +37,9 @@ if c == 3 {
     ...
 } else if c > 3 {
     ...
-} else ...
+} else {
+    ...
+}
 
 
 while true do exec( input("> ") ) # assuming exec is a defined scoop or fun
@@ -61,7 +63,7 @@ var name str
 lst =? immtbl # =? converts to appropriate type
 
 
-for var i in (0..2i..200) {
+for var i in (1..*2..200) {
     ...
 }
 

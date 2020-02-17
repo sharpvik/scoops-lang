@@ -1,6 +1,0 @@
-Golang forces programmers to put their projects into a folder specified in this
-special $GOROOT or $GOPATH environment variable, which makes it hard to contain
-that project inside another, more global proect, such as this one.
-
-Follow this link: https://github.com/sharpvik/scoops-go
-You will find `scoops-go` implementation there.

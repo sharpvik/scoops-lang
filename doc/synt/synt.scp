@@ -1,0 +1,40 @@
+var a = 5       # untyped variable
+var a int = 5   # typed variable
+var a := 5      # typed variable with assumed type
+
+
+
+var fullName := {
+    # pure & anonymous scoop
+    # it's "pure" because by default it doesn't have access to any variables
+    # outside of its own scope
+    first = input("First name: ")
+    second = input("Second name: ")
+    give f"{first} {second}"        # give used instead of return for anonymous
+                                    # scoops as a matter of conveniense
+}
+
+using global {...}      # scoop with global access -> "global scoop"
+using a {...}           # scoop with partial global access -> "partial scoop"
+using a as five {...}   # "partial scoop" uses context for better local naming
+
+
+
+var c = @b # c points to the same object as b
+
+fun f(x) = 2x + 1 if x % 2 == 0 else 2x     # ternary operator in a fun function
+fun f(x) int = 2x + 1 if x % 2 == 0 else 2x # fun functions must return a value
+
+c = f(3)
+
+
+
+var list List = [1..10]
+var list List = [each ** 2 for each in 1..10] # generator
+var tuple := (4..7) # or...
+var tuple := (4, 5, 6)
+var dict = [
+    "key": value, # last colon is optional
+]
+var set = Set(...)
+var stack = Stack(...)
